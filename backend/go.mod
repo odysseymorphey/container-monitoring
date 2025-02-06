@@ -4,7 +4,6 @@ go 1.23
 
 require (
 	github.com/gofiber/fiber/v2 v2.52.6
-	github.com/gorilla/mux v1.8.1
 	github.com/lib/pq v1.10.9
 )
 
@@ -19,5 +18,5 @@ require (
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.51.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/sys v0.29.0 // indirect
 )
