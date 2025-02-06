@@ -26,7 +26,6 @@ func NewServer() *Server {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Fatal(db.Ping())
 
 	app := fiber.New()
 
