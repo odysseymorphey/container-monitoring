@@ -13,6 +13,8 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mysecretpassword
+    labels:
+      - "ping_port=5432"
     ports:
       - "5432:5432"
     volumes:
@@ -30,6 +32,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mysecretpassword
       POSTGRES_DB: postgres
+    labels:
+      - "ping_port=8382"
     ports:
       - "8382:8382"
     depends_on:
