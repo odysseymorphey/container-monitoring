@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS ping_status (
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS idx_unique_ip_ping
-ON ping_status(ip_address)
+ON ping_status(ip_address);
 
 CREATE INDEX IF NOT EXISTS idx_ip
-ON ping_status(ip_address)
+ON ping_status(ip_address);
