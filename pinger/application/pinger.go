@@ -16,7 +16,7 @@ import (
 )
 
 const (
-	sleepInterval = time.Second * 30
+	sleepInterval = time.Second * 15
 	pingTimeout   = time.Second * 2
 	apiUrl        = "http://backend:8382/api/add_status"
 )
@@ -65,6 +65,7 @@ func (p *Pinger) checkContainerStatus() error {
 
 		pingTime, success := pingHost(ip, port)
 		p.status.PingTime = pingTime
+		p.status.Success = success
 		if success {
 			p.status.LastSuccess = time.Now()
 		}
@@ -88,8 +89,7 @@ func (p *Pinger) checkContainerStatus() error {
 func pingHost(host, port string) (time.Time, bool) {
 	_, err := net.DialTimeout("tcp", fmt.Sprintf("%s:%s", host, port), pingTimeout)
 	if err != nil {
-		fmt.Printf("Error: %v", err)
+		log.Printf("Error: ping %s:%s failed: %s", host, port, err)
 	}
-
 	return time.Now(), err == nil
 }
